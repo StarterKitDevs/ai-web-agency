@@ -1,7 +1,7 @@
-import Header from '@/components/header'
-import Hero from '@/components/hero'
+import { Header } from '@/components/header'
+import { Hero } from '@/components/hero'
 import QuoteForm from '@/components/quote-form'
-import Footer from '@/components/footer'
+import { Footer } from '@/components/footer'
 import CopilotChat from '@/components/CopilotChat'
 
 export default function Home() {
