@@ -9,10 +9,5 @@
     "app/api/**/*.ts": {
       "maxDuration": 30
     }
-  },
-  "env": {
-    "NEXT_PUBLIC_SUPABASE_URL": "https://xxzieezklzehlhizphkj.supabase.co",
-    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh4emllZXprbHplaGxoaXpwa2oiLCJyb2xlIjoiYW5vbiIsImlhdCI6MTczNDU2NzIwMCwiZXhwIjoyMDUwMTQzMjAwfQ.Ej8Ej8Ej8Ej8Ej8Ej8Ej8Ej8Ej8Ej8Ej8Ej8Ej8Ej8",
-    "NEXT_PUBLIC_BACKEND_URL": "https://ai-web-agency-backend.onrender.com"
   }
 } 
