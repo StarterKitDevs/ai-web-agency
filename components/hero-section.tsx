@@ -54,13 +54,15 @@ export function HeroSection({ onGetQuote }: HeroSectionProps) {
               Get Your Website Now
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="px-8 py-6 text-lg font-semibold"
-            >
-              View Examples
-            </Button>
+            <Link href="/bolt-diy">
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="px-8 py-6 text-lg font-semibold"
+              >
+                Try Bolt DIY
+              </Button>
+            </Link>
           </div>
 
           {/* Admin Access Button - Small and unobtrusive */}

@@ -47,16 +47,19 @@ export function Navbar() {
           </div>
 
           {/* Desktop Actions */}
-          <div className="hidden md:flex items-center space-x-4">
-            <ThemeToggle />
-            <Link href="/admin/login">
-              <Button variant="ghost" size="sm" className="p-2">
-                <Settings className="h-4 w-4" />
-              </Button>
-            </Link>
-            <Button variant="outline" size="sm">
-              Get Started
-            </Button>
+          <div className="hidden md:flex items-center space-x-8">
+            <a href="#features" className="text-gray-700 hover:text-blue-600 transition-colors">
+              Features
+            </a>
+            <a href="#pricing" className="text-gray-700 hover:text-blue-600 transition-colors">
+              Pricing
+            </a>
+            <a href="/bolt-diy" className="text-gray-700 hover:text-blue-600 transition-colors">
+              Bolt DIY
+            </a>
+            <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">
+              Contact
+            </a>
           </div>
 
           {/* Mobile menu button */}
