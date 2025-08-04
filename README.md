@@ -1,54 +1,54 @@
-# AI Web Agency - MVP Deployment
+# AI Web Agency - Enhanced Frontend
 
-A production-ready AI-powered web development agency platform with automated workflow orchestration.
+A production-ready AI-powered web development agency platform with automated workflow orchestration and modern UX.
+
+[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/StarterKitDevs/ai-web-agency)
 
 ## 🚀 **Quick Deploy**
 
-### **Frontend (Next.js) → Vercel**
-1. **Connect to Vercel:**
-   ```bash
-   # Install Vercel CLI
-   npm i -g vercel
-   
-   # Deploy to Vercel
-   vercel --prod
-   ```
+### **Automatic Deployment (Recommended)**
+1. **Fork this repository** to your GitHub account
+2. **Connect to Vercel:**
+   - Go to [vercel.com](https://vercel.com)
+   - Click "New Project"
+   - Import your forked repository
+   - Deploy automatically!
 
-2. **Environment Variables (Vercel Dashboard):**
-   ```
-   NEXT_PUBLIC_SUPABASE_URL=https://xxzieezklzehlhizphkj.supabase.co
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
-   NEXT_PUBLIC_BACKEND_URL=https://ai-web-agency-backend.onrender.com
-   ```
+### **Manual Deployment**
+```bash
+# Install Vercel CLI
+npm i -g vercel
 
-### **Backend (FastAPI) → Render**
-1. **Connect to Render:**
-   - Go to [render.com](https://render.com)
-   - Create new Web Service
-   - Connect your GitHub repo
-   - Set root directory to `backend/`
+# Deploy to Vercel
+vercel --prod
+```
 
-2. **Environment Variables (Render Dashboard):**
-   ```
-   PERPLEXITY_API_KEY=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
-   SUPABASE_URL=https://xxzieezklzehlhizphkj.supabase.co
-   SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
-   STRIPE_SECRET_KEY=sk_test_...
-   STRIPE_WEBHOOK_SECRET=whsec_...
-   DATABASE_URL=postgresql://...
-   ```
+### **Environment Variables (Vercel Dashboard):**
+```
+NEXT_PUBLIC_SUPABASE_URL=https://xxzieezklzehlhizphkj.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+NEXT_PUBLIC_BACKEND_URL=https://ai-web-agency-backend.onrender.com
+```
 
-3. **Build Command:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+## 🎨 **Enhanced Frontend Features**
 
-4. **Start Command:**
-   ```bash
-   uvicorn app.main:app --host 0.0.0.0 --port $PORT
-   ```
+### **Modern User Experience**
+- ✅ **Enhanced Hero Section** with compelling messaging and social proof
+- ✅ **Interactive Chat Bot** with quick replies and AI assistance
+- ✅ **Process Timeline** showing 4-step development process
+- ✅ **Social Proof Section** with testimonials and statistics
+- ✅ **Responsive Navigation** with mobile menu and theme toggle
+- ✅ **Dark/Light Mode** with smooth transitions
+- ✅ **Professional Branding** with gradient designs and animations
 
-## 📋 **Features**
+### **Technical Improvements**
+- ✅ **Radix UI Components** for better accessibility
+- ✅ **Enhanced Dependencies** with latest versions
+- ✅ **Optimized Build Process** for faster deployment
+- ✅ **GitHub Actions** for automatic deployment
+- ✅ **Vercel Configuration** for optimal performance
+
+## 📋 **Core Features**
 
 ### **Frontend**
 - ✅ Responsive landing page with dark/light mode
@@ -81,9 +81,11 @@ A production-ready AI-powered web development agency platform with automated wor
 - Next.js 14 (App Router)
 - TypeScript
 - Tailwind CSS + shadcn/ui
+- Radix UI Components
 - Supabase (client)
 - Stripe (client)
 - React Hook Form + Zod
+- Lucide React Icons
 
 ### **Backend**
 - FastAPI (Python 3.11+)
@@ -98,127 +100,10 @@ A production-ready AI-powered web development agency platform with automated wor
 - Render/Railway (backend hosting)
 - Supabase (database + auth)
 - Stripe (payments)
+- GitHub Actions (CI/CD)
 
-## 🔧 **Local Development**
+## 🚀 **Deployment Status**
 
-### **Frontend**
-```bash
-cd frontend
-npm install
-npm run dev
-```
+This project uses GitHub Actions for automatic deployment to Vercel. Every push to the main branch triggers a new deployment.
 
-### **Backend**
-```bash
-cd backend
-pip install -r requirements.txt
-uvicorn app.main:app --reload
-```
-
-### **Environment Setup**
-```bash
-# Frontend (.env.local)
-NEXT_PUBLIC_SUPABASE_URL=https://xxzieezklzehlhizphkj.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
-NEXT_PUBLIC_BACKEND_URL=http://localhost:8000
-
-# Backend (.env)
-PERPLEXITY_API_KEY=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
-SUPABASE_URL=https://xxzieezklzehlhizphkj.supabase.co
-SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
-STRIPE_SECRET_KEY=sk_test_...
-STRIPE_WEBHOOK_SECRET=whsec_...
-DATABASE_URL=postgresql://...
-```
-
-## 📊 **API Endpoints**
-
-### **Projects**
-- `POST /api/projects` - Create new project
-- `GET /api/projects/{id}/status` - Get project status
-- `POST /api/projects/{id}/trigger` - Trigger agent workflow
-- `GET /api/projects` - List all projects
-
-### **Payments**
-- `POST /api/payments/create-intent` - Create Stripe PaymentIntent
-- `POST /api/payments/webhook` - Stripe webhook handler
-
-### **Copilot**
-- `POST /api/copilot` - AI chat with suggestions
-
-### **WebSocket**
-- `WS /ws` - Real-time updates
-
-## 🤖 **Agent Workflow**
-
-1. **Design Agent** → Creates mockups using Perplexity AI
-2. **Development Agent** → Generates code and deployment config
-3. **Deployment Agent** → Publishes to Vercel
-4. **Notification Agent** → Sends client updates
-
-## 🚀 **Deployment URLs**
-
-- **Frontend**: `https://ai-web-agency.vercel.app`
-- **Backend**: `https://ai-web-agency-backend.onrender.com`
-- **API Docs**: `https://ai-web-agency-backend.onrender.com/docs`
-
-## 📝 **Environment Variables**
-
-### **Frontend (Vercel)**
-```env
-NEXT_PUBLIC_SUPABASE_URL=https://xxzieezklzehlhizphkj.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
-NEXT_PUBLIC_BACKEND_URL=https://ai-web-agency-backend.onrender.com
-```
-
-### **Backend (Render)**
-```env
-PERPLEXITY_API_KEY=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
-SUPABASE_URL=https://xxzieezklzehlhizphkj.supabase.co
-SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
-STRIPE_SECRET_KEY=sk_test_...
-STRIPE_WEBHOOK_SECRET=whsec_...
-DATABASE_URL=postgresql://...
-```
-
-## 🎯 **MVP Features**
-
-- ✅ **Landing Page**: Professional agency website
-- ✅ **Quote Form**: Interactive pricing calculator
-- ✅ **Payment Processing**: Stripe integration
-- ✅ **User Authentication**: Supabase magic link
-- ✅ **Project Dashboard**: Live status tracking
-- ✅ **AI Copilot**: Intelligent chat assistant
-- ✅ **Agent Workflow**: Automated web development
-- ✅ **Real-time Updates**: Live progress tracking
-- ✅ **Responsive Design**: Mobile-first approach
-- ✅ **Dark/Light Mode**: Theme switching
-
-## 🔄 **Workflow Process**
-
-1. **Client fills quote form** → Real-time pricing
-2. **Payment processed** → Stripe + Supabase user creation
-3. **Agent workflow triggered** → Design → Dev → Deploy → Notify
-4. **Live website delivered** → Client notified via email/SMS
-5. **Dashboard updates** → Real-time progress tracking
-
-## 📈 **Next Steps**
-
-- [ ] Add custom domain
-- [ ] Implement email service (SendGrid)
-- [ ] Add SMS notifications (Twilio)
-- [ ] Enhanced error handling
-- [ ] Performance monitoring
-- [ ] Analytics integration
-- [ ] SEO optimization
-- [ ] A/B testing setup
-
-## 🆘 **Support**
-
-For deployment issues or questions:
-1. Check environment variables
-2. Verify API endpoints
-3. Check deployment logs
-4. Test local development first
-
-**Ready for MVP deployment! 🚀** 
+**Latest Deployment:** [![Deploy Status](https://github.com/StarterKitDevs/ai-web-agency/workflows/Deploy%20to%20Vercel/badge.svg)](https://github.com/StarterKitDevs/ai-web-agency/actions) 
