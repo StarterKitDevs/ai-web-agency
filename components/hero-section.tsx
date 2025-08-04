@@ -1,14 +1,28 @@
-'use client';
+"use client";
 
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Clock, Users, CheckCircle } from 'lucide-react';
+import { ArrowRight, Clock, Users, CheckCircle, Settings } from 'lucide-react';
+import Link from 'next/link';
 
 interface HeroSectionProps {
   onGetQuote: () => void;
 }
 
 export function HeroSection({ onGetQuote }: HeroSectionProps) {
+  const handleGetWebsiteNow = () => {
+    // Scroll to the quote form section
+    const quoteFormSection = document.getElementById('quote-form-section');
+    if (quoteFormSection) {
+      quoteFormSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+    // Also trigger the quote form display
+    onGetQuote();
+  };
+
   return (
     <section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -34,7 +48,7 @@ export function HeroSection({ onGetQuote }: HeroSectionProps) {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button 
               size="lg" 
-              onClick={onGetQuote}
+              onClick={handleGetWebsiteNow}
               className="px-8 py-6 text-lg font-semibold bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105"
             >
               Get Your Website Now
@@ -47,6 +61,20 @@ export function HeroSection({ onGetQuote }: HeroSectionProps) {
             >
               View Examples
             </Button>
+          </div>
+
+          {/* Admin Access Button - Small and unobtrusive */}
+          <div className="flex justify-center mb-8">
+            <Link href="/admin/login">
+              <Button 
+                variant="ghost" 
+                size="sm"
+                className="text-xs text-muted-foreground hover:text-foreground"
+              >
+                <Settings className="h-3 w-3 mr-1" />
+                Admin Access
+              </Button>
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">

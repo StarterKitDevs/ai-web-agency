@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/theme-toggle';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Settings } from 'lucide-react';
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,6 +49,11 @@ export function Navbar() {
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
             <ThemeToggle />
+            <Link href="/admin/login">
+              <Button variant="ghost" size="sm" className="p-2">
+                <Settings className="h-4 w-4" />
+              </Button>
+            </Link>
             <Button variant="outline" size="sm">
               Get Started
             </Button>
@@ -88,9 +93,16 @@ export function Navbar() {
             ))}
             <div className="pt-4 flex items-center justify-between">
               <ThemeToggle />
-              <Button variant="outline" size="sm">
-                Get Started
-              </Button>
+              <div className="flex items-center space-x-2">
+                <Link href="/admin/login">
+                  <Button variant="ghost" size="sm" className="p-2">
+                    <Settings className="h-4 w-4" />
+                  </Button>
+                </Link>
+                <Button variant="outline" size="sm">
+                  Get Started
+                </Button>
+              </div>
             </div>
           </div>
         </div>

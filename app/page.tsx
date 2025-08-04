@@ -16,7 +16,7 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection onGetQuote={() => setShowQuoteForm(true)} />
-        {showQuoteForm && <QuoteForm />}
+        <QuoteForm />
         <ProcessTimeline />
         <SocialProof />
       </main>
